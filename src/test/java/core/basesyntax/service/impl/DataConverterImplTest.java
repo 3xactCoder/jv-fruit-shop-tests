@@ -1,9 +1,10 @@
 package core.basesyntax.service.impl;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import core.basesyntax.model.FruitTransaction;
 import core.basesyntax.service.DataConverter;
 import java.util.List;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -23,8 +24,8 @@ public class DataConverterImplTest {
         );
 
         List<FruitTransaction> result = dataConverter.convertToTransaction(inputLines);
-        Assertions.assertEquals(1, result.size());
-        Assertions.assertEquals("banana", result.get(0).getFruit());
+        assertEquals(1, result.size());
+        assertEquals("banana", result.get(0).getFruit());
     }
 }
 

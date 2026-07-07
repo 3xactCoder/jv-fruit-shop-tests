@@ -1,9 +1,10 @@
 package core.basesyntax.strategy;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import core.basesyntax.model.FruitTransaction;
 import java.util.HashMap;
 import java.util.Map;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class OperationStrategyImplTest {
@@ -14,7 +15,7 @@ public class OperationStrategyImplTest {
         handlers.put(FruitTransaction.Operation.BALANCE, balanceHandler);
 
         OperationStrategy strategy = new OperationStrategyImpl(handlers);
-        Assertions.assertEquals(balanceHandler, strategy.get(FruitTransaction.Operation.BALANCE));
+        assertEquals(balanceHandler, strategy.get(FruitTransaction.Operation.BALANCE));
     }
 }
 

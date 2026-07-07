@@ -12,7 +12,6 @@ public class FileReaderImpl implements FileReader {
     @Override
     public List<String> read(String filePath) {
         List<String> lines = new ArrayList<>();
-
         try (BufferedReader reader = Files.newBufferedReader(Paths.get(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -24,6 +23,7 @@ public class FileReaderImpl implements FileReader {
         return lines;
     }
 }
+
 
 
 

@@ -1,6 +1,5 @@
 package core.basesyntax.db;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,7 +15,11 @@ public class Storage {
     }
 
     public static Map<String, Integer> getAllFruits() {
-        return Collections.unmodifiableMap(fruits);
+        return Map.copyOf(fruits);
+    }
+
+    public static void clear() {
+        fruits.clear();
     }
 }
 

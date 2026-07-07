@@ -1,9 +1,10 @@
 package core.basesyntax.strategy;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import core.basesyntax.db.Storage;
 import core.basesyntax.model.FruitTransaction;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -27,7 +28,7 @@ public class BalanceOperationTest {
         balanceOperation.handle(transaction);
 
         int actualQuantity = Storage.getQuantity("banana");
-        Assertions.assertEquals(50, actualQuantity);
+        assertEquals(50, actualQuantity);
     }
 }
 
